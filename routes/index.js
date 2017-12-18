@@ -18,11 +18,18 @@ var checkLoginStatus = function(req, res){
 
 //Home page
 exports.index = function(req, res){
+	var path = 'BTC';
+	if(req.params.symbol)
+	{
+		path = 'img/'+req.params.symbol;
+	}
+	
 	checkLoginStatus(req, res);
 	res.render( 'index', {
 		title : 'Tack Exchange', 
 		loginStatus : isLogin,
 		username : req.signedCookies.userid,
+		symbolPath: path,
 		tickers: tickersData
 	});	
 };

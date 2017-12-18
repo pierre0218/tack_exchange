@@ -12,42 +12,42 @@ body{padding-top: 60px;padding-bottom: 40px;}
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
+    <div class="navbar-inner">
+        <div class="container">
 
-			<a class="brand" href="/">Tack Exchange</a>
-			<div class="nav-collapse">
-				<ul class="nav">
-					<% if (loginStatus) { %>
-						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trading <b class="caret"></b></a>
-						  <ul class="dropdown-menu">
-							<li><a href="/t/BTC">Bitcoin</a></li>
-							<li><a href="/t/LTC">Litecoin</a></li>
-							<li><a href="/t/ETH">Ethereum</a></li>
-							<li><a href="/t/XRP">Ripple</a></li>
-							<li><a href="/t/IOTA">Iota</a></li>
-						  </ul>
-						</li>
-						<li><a href="/logout">Logout</a></li>
-						<li><%= username %></li>
-					<% } else{ %>
-						<li><a href="/login">Sign In</a></li>
-						<li><a href="/reg">Register</a></li>
-					<% } %>
-				</ul>
-			</div>
-		</div>
-	</div>
+            <a class="brand" href="/">Tack Exchange</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <% if (loginStatus) { %>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Trading <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="/t/BTC">Bitcoin</a></li>
+                            <li><a href="/t/LTC">Litecoin</a></li>
+                            <li><a href="/t/ETH">Ethereum</a></li>
+                            <li><a href="/t/XRP">Ripple</a></li>
+                            <li><a href="/t/IOTA">Iota</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="/logout">Logout</a></li>
+                        <li><%= username %></li>
+                    <% } else{ %>
+                        <li><a href="/login">Sign In</a></li>
+                        <li><a href="/reg">Register</a></li>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <div id="container" class="container">
-	<%- body %>
-	<hr />
-	<footer>
-		<p style="text-align:center;">
-			<a href="http://www.tack.world" target="_blank">NTU Bitcoin in the Big Data Era 2017fall</a> 2017
-		</p>
-	</footer>
+    <%- body %>
+    <hr />
+    <footer>
+        <p style="text-align:center;">
+            <a href="http://www.tack.world" target="_blank">NTU Bitcoin in the Big Data Era 2017fall</a> 2017
+        </p>
+    </footer>
 </div>
 <script src="/javascripts/jquery.js"></script>
 <script src="/javascripts/bootstrap.js"></script>

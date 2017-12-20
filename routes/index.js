@@ -18,10 +18,16 @@ var checkLoginStatus = function(req, res){
 
 //Home page
 exports.index = function(req, res){
-    var path = 'BTC';
+    var icon_path = 'BTC';
+    var chart_path = 'BTC_chart';
+    var book_path = 'BTC_orderbook';
+    var pair = 'BTC/USD';
     if(req.params.symbol)
     {
-        path = 'img/'+req.params.symbol;
+        icon_path = 'img/'+req.params.symbol;
+        chart_path = 'plots/'+req.params.symbol+'_chart';
+        book_path = 'orderbook/'+req.params.symbol+'_orderbook';
+        pair = req.params.symbol+'/USD';
     }
     
     checkLoginStatus(req, res);
@@ -29,7 +35,10 @@ exports.index = function(req, res){
         title : 'Tack Exchange', 
         loginStatus : isLogin,
         username : req.signedCookies.userid,
-        symbolPath: path,
+        iconPath: icon_path,
+        chartPath: chart_path,
+        bookPath: book_path,
+        pairName: pair,
         tickers: tickersData
     }); 
 };

@@ -35,17 +35,17 @@
                 </div>
                 <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">ORDER FORM</h3>
                 <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                    <form method="post" action="/post" style="text-align:center;">
+                    <form method="post" action="/post">
                         <div class="row" style="text-align:left;">
-                            <p class="span2">Price:</p>
-                            <p class="span2">Amount:</p>
+                            <p class="span1" style="margin-right:15px;">Price:</p>
+                            <p class="span1">Amount:</p>
                         </div>
-                        <div class="row">
-                            <input type="text" class="span2" name="price">
-                            <input type="text" class="span2" name="amount">
+                        <div class="row" style="text-align:left;">
+                            <input type="text" style="width:90px;margin-left:30px;" name="price">
+                            <input type="text" style="width:90px;margin-left:10px;" name="amount">
                         </div>
-                        <div class="row">
-                        <button type="submit" class="btn btn-success">Margin Buy</button>
+                        <div class="row" style="text-align:left;">
+                        <button type="submit" class="btn btn-success" style="margin-left:30px;">Margin Buy</button>
                         <button type="submit" class="btn btn-success">Margin Sell</button>
                         </div>
                     </form>

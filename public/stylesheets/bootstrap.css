@@ -292,7 +292,7 @@ a:hover {
   width: 14.89361702%;
 }
 .row-fluid > .span1 {
-  width: 6.382978723%;
+  width: 8.382978723%;
 }
 .container {
   margin-left: auto;
@@ -1600,7 +1600,10 @@ legend + .control-group {
 .btn-warning:hover,
 .btn-danger,
 .btn-danger:hover,
-.btn-success,
+.btn-success{
+  width:100px;
+  margin-left:10px;
+}
 .btn-success:hover,
 .btn-info,
 .btn-info:hover,

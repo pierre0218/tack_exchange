@@ -1,11 +1,10 @@
 ﻿var tickersData = [
-    { symbol: "BTC", lastusd: 18492, volume: 64486},
-    { symbol: "LTC", lastusd: 306.71, volume: 439804},
-    { symbol: "ETH", lastusd: 704.26, volume: 248080},
-    { symbol: "XRP", lastusd: 0.69197, volume: 97147423},
-    { symbol: "IOTA", lastusd: 3.834, volume: 34907679},
+    { symbol: "BTC", lastusd: 18492, volume: 64486, summary:"BTC/USD", icon_path: "t/img/BTC", total: 0,},
+    { symbol: "LTC", lastusd: 306.71, volume: 439804, summary:"LTC/USD",icon_path: "t/img/LTC", total: 0,},
+    { symbol: "ETH", lastusd: 704.26, volume: 248080, summary:"ETH/USD",icon_path: "t/img/ETH", total: 0,},
+    { symbol: "XRP", lastusd: 0.69197, volume: 97147423, summary:"XRP/USD",icon_path: "t/img/XRP", total: 0,},
+    { symbol: "IOTA", lastusd: 3.834, volume: 34907679, summary:"IOTA/USD",icon_path: "t/img/IOTA", total: 0,},
 ]; 
-
 
 //Check user's login status
 var isLogin = false;
@@ -21,6 +20,7 @@ exports.index = function(req, res){
     var icon_path = 'BTC';
     var chart_path = 'BTC_chart';
     var book_path = 'BTC_orderbook';
+    var trade_path = 'BTC_trade';
     var pair = 'BTC/USD';
     if(req.params.symbol)
     {
@@ -38,6 +38,7 @@ exports.index = function(req, res){
         iconPath: icon_path,
         chartPath: chart_path,
         bookPath: book_path,
+        tradePath: trade_path,
         pairName: pair,
         tickers: tickersData
     }); 

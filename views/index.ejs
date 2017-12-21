@@ -17,18 +17,18 @@
             <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
                 <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">TICKER</h3>
                 <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                    <div class="row-fluid">
-                        <p class="span3">SYMBOL</p>
-                        <p class="span3">LAST 24 HR</p>
-                        <p class="span3">VOLUME</p>
+                    <div class="row-fluid" style="text-align:center;">
+                        <p class="span4">SYMBOL</p>
+                        <p class="span4">LAST 24 HR</p>
+                        <p class="span4">VOLUME</p>
                     </div>
                     <hr />
                 
                     <% tickers.forEach(function(ticker, index) { %>
                         <div class="row-fluid">
-                            <p class="span3"><%= ticker.symbol %></p>
-                            <p class="span3"><%= ticker.lastusd %></p>
-                            <p class="span3"><%= ticker.volume %></p>
+                            <p class="span4" style="text-align:center;"><%= ticker.symbol %></p>
+                            <p class="span4" style="text-align:right;"><%= ticker.lastusd %></p>
+                            <p class="span4" style="text-align:right;"><%= ticker.volume %></p>
                         </div>
                     <% }) %>
                     

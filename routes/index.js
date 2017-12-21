@@ -1,9 +1,9 @@
 ﻿var tickersData = [
-    { symbol: "BTC", lastusd: 18492, volume: 64486, summary:"BTC/USD", icon_path: "t/img/BTC", total: 0,},
-    { symbol: "LTC", lastusd: 306.71, volume: 439804, summary:"LTC/USD",icon_path: "t/img/LTC", total: 0,},
-    { symbol: "ETH", lastusd: 704.26, volume: 248080, summary:"ETH/USD",icon_path: "t/img/ETH", total: 0,},
-    { symbol: "XRP", lastusd: 0.69197, volume: 97147423, summary:"XRP/USD",icon_path: "t/img/XRP", total: 0,},
-    { symbol: "IOTA", lastusd: 3.834, volume: 34907679, summary:"IOTA/USD",icon_path: "t/img/IOTA", total: 0,},
+    { symbol: "BTC", lastusd: 18492, volume: 64486, summary:"BTC/USD", icon_path: "img/BTC", total: 0,},
+    { symbol: "LTC", lastusd: 306.71, volume: 439804, summary:"LTC/USD",icon_path: "img/LTC", total: 0,},
+    { symbol: "ETH", lastusd: 704.26, volume: 248080, summary:"ETH/USD",icon_path: "img/ETH", total: 0,},
+    { symbol: "XRP", lastusd: 0.69197, volume: 97147423, summary:"XRP/USD",icon_path: "img/XRP", total: 0,},
+    { symbol: "IOTA", lastusd: 3.834, volume: 34907679, summary:"IOTA/USD",icon_path: "img/IOTA", total: 0,},
 ]; 
 
 //Check user's login status
@@ -17,17 +17,20 @@ var checkLoginStatus = function(req, res){
 
 //Home page
 exports.index = function(req, res){
-    var icon_path = 'BTC';
-    var chart_path = 'BTC_chart';
-    var book_path = 'BTC_orderbook';
+    var icon_path = 'img/BTC';
+    var chart_path = 'plots/BTC_chart';
+    var book_path = 'orderbook/BTC_orderbook';
     var trade_path = 'BTC_trade';
     var pair = 'BTC/USD';
+    var sub_dir = 't/';
     if(req.params.symbol)
     {
         icon_path = 'img/'+req.params.symbol;
         chart_path = 'plots/'+req.params.symbol+'_chart';
         book_path = 'orderbook/'+req.params.symbol+'_orderbook';
         pair = req.params.symbol+'/USD';
+        trade_path = '../BTC_trade';
+        sub_dir = '';
     }
     
     checkLoginStatus(req, res);
@@ -35,6 +38,7 @@ exports.index = function(req, res){
         title : 'Tack Exchange', 
         loginStatus : isLogin,
         username : req.signedCookies.userid,
+        subDir: sub_dir,
         iconPath: icon_path,
         chartPath: chart_path,
         bookPath: book_path,

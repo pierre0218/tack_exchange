@@ -12,7 +12,7 @@
       <div class="row-fluid">
         <div class="span3">
             <div>
-                <img src="<%= iconPath %>.png" height="42" width="42">
+                <img src="<%= subDir%><%= iconPath %>.png" height="42" width="42">
             </div>
             <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
                 <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">TICKER</h3>
@@ -62,7 +62,7 @@
 
                     <% tickers.forEach(function(ticker, index) { %>
                         <div class="row-fluid ">
-                            <p class="span2" style="text-align:center;"><img src="<%= ticker.icon_path %>.png" height="22" width="22"></p>
+                            <p class="span2" style="text-align:center;"><img src="<%= subDir%><%= ticker.icon_path %>.png" height="22" width="22"></p>
                             <p class="span2" style="text-align:center;"><%= ticker.symbol %></p>
                             <p class="span2" style="text-align:right;"><%= ticker.total %></p>
                             <p class="span2" style="text-align:right;"><%= ticker.total %></p>
@@ -98,7 +98,7 @@
             <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
                 <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">CHART (<%= pairName %>)</h3>
                 <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                    <img src="<%= chartPath %>.png">
+                    <img src="<%= subDir%><%= chartPath %>.png">
                 </div>
                 <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">POSITIONS</h3>
                 <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">No elements to show</div>
@@ -112,7 +112,7 @@
                     <div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
                         <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">ORDER BOOK (<%= pairName %>)</h3>
                         <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom">
-                            <img src="<%= bookPath %>.png">
+                            <img src="<%= subDir%><%= bookPath %>.png">
                         </div>
                     </div>
                 </div>
